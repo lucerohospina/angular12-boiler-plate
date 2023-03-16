@@ -1,0 +1,43 @@
+<div class="question-container">
+  <ng-container *ngIf="question.type ===  'radio'">
+    <mat-radio-group 
+      color="primary" 
+      (change)="changeRadioAnswer(question.id, $event.value)">
+        <mat-radio-button 
+          class="question-radio-button" 
+          *ngFor="let option of question.choiceOptions" 
+          [value]="option">
+            {{ option.label }}
+        </mat-radio-button>
+    </mat-radio-group>
+  </ng-container>
+
+  <ng-container *ngIf="question.type ===  'three_buttons'">
+    <div *ngFor="let option of question.choiceOptions">
+      <button 
+        mat-stroked-button 
+        class="question-button" 
+        color="primary"
+        (click)="selectButtonAnswer(question.id, option)">
+        {{ option.label }}
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="question.type ===  'dropdown'">
+    <div class="question-select-container">
+      <mat-label>Select an option</mat-label>
+      <mat-form-field appearance="outline">
+        <mat-select 
+          [(value)]="selected"
+          (selectionChange)="changeDropdownAnswer(question.id, $event.value)">
+            <mat-option 
+              [value]="option.value" 
+              *ngFor="let option of question.choiceOptions">
+              {{ option.label }}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+    </div>
+  </ng-container>
+</div>

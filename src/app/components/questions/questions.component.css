@@ -1,0 +1,17 @@
+.question-radio-button {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.question-button {
+  color: #00BFFF;
+  border:1.5px solid #00BFFF;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.question-select-container {
+  display: flex;
+  flex-direction: column;
+}
