@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { QuestionsComponent } from './questions.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 describe('QuestionsComponent', () => {
   let component: QuestionsComponent;
@@ -8,7 +11,13 @@ describe('QuestionsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QuestionsComponent ]
+      declarations: [ QuestionsComponent ],
+      imports: [
+        MatRadioModule,
+        MatButtonModule,
+        MatSelectModule,
+        MatFormFieldModule
+      ]
     })
     .compileComponents();
   });
