@@ -1,19 +1,22 @@
-<div class="question-container">
-  <ng-container *ngIf="question.type ===  'radio'">
+<div class="questions-container mat-elevation-z8" *ngFor="let question of questions; let i = index">
+  <h3 class="mb-0 fw-500">{{ index + 1 }}.{{ i + 1 }}</h3>
+  <h3 class="fw-500">* {{ question.displayText }}</h3>
+
+  <ng-container *ngIf="sectionId === question.sectionOccurrenceId && question?.type ===  'radio'">
     <mat-radio-group 
       color="primary" 
       (change)="changeRadioAnswer(question.id, $event.value)">
         <mat-radio-button 
           class="question-radio-button" 
-          *ngFor="let option of question.choiceOptions" 
+          *ngFor="let option of question?.choiceOptions" 
           [value]="option">
             {{ option.label }}
         </mat-radio-button>
     </mat-radio-group>
   </ng-container>
 
-  <ng-container *ngIf="question.type ===  'three_buttons'">
-    <div *ngFor="let option of question.choiceOptions">
+  <ng-container *ngIf="sectionId === question.sectionOccurrenceId && question?.type ===  'three_buttons'">
+    <div *ngFor="let option of question?.choiceOptions">
       <button 
         mat-stroked-button 
         class="question-button" 
@@ -24,16 +27,15 @@
     </div>
   </ng-container>
 
-  <ng-container *ngIf="question.type ===  'dropdown'">
+  <ng-container *ngIf="sectionId === question.sectionOccurrenceId && question?.type ===  'dropdown'">
     <div class="question-select-container">
       <mat-label>Select an option</mat-label>
       <mat-form-field appearance="outline">
-        <mat-select 
-          [(value)]="selected"
+        <mat-select
           (selectionChange)="changeDropdownAnswer(question.id, $event.value)">
             <mat-option 
               [value]="option.value" 
-              *ngFor="let option of question.choiceOptions">
+              *ngFor="let option of question?.choiceOptions">
               {{ option.label }}
             </mat-option>
           </mat-select>

@@ -1,28 +1,31 @@
 <nav class="header">TEST APP</nav>
-<div class="container">
+<div class="sections-container">
   <div class="main" *ngFor="let section of sectionsResult.sections; let i = index">
     <mat-accordion multi="true">
-      <mat-expansion-panel isMulti hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            {{ i + 1 }}
-          </mat-panel-title>
-          <mat-panel-description>
-            {{ section.name }}
-            Total questions: {{ section.totalQuestions }}, answered: {{ section.answeredQuestions }}
-          </mat-panel-description>
-          <!-- <div>
-            {{ i + 1 }}
-          </div>
-          <div>
-            {{ section.name }}
-            Total questions: {{ section.totalQuestions }}, answered: {{ section.answeredQuestions }}
-          </div> -->
+      <mat-expansion-panel
+        (opened)="openedPanel()" 
+        (closed)="closedPanel()" 
+        hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h1 class="section-index-title">{{ i + 1 }}</h1>
+            </mat-panel-title>
+            <mat-panel-description [class.panel-header-description-font-color]="isPanelOpened">
+              <p [class.fw-500]="isPanelOpened">{{ section.name }}</p>
+              <p *ngIf="!isPanelOpened">Total questions: {{ section.totalQuestions }}, answered: {{ section.answeredQuestions }}</p>
+              <p *ngIf="isPanelOpened"><span class="fw-500">{{ section.answeredQuestions }}</span> <span class="fw-400"> of {{ section.totalQuestions }}</span></p>
+            </mat-panel-description>
         </mat-expansion-panel-header>
-        <div class="questions-container mat-elevation-z8" *ngFor="let question of questionsResult.questions; let j = index">
-          <h3>{{ i + 1 }}.{{ j + 1 }} {{ question.displayText }}</h3>
-          <app-questions [question]="question"></app-questions>
+        <div class="questions-container mat-elevation-z8" *ngIf="section.totalQuestions === '0'">
+          <h3>Ooops, there are no questions in this section</h3>
         </div>
+        <ng-container *ngIf="section.totalQuestions !== '0'">
+          <app-questions 
+            [sectionId]="section.sectionOccurrenceId" 
+            [questions]="questionsResult.questions"
+            [index]="i">
+          </app-questions>
+        </ng-container>
       </mat-expansion-panel>
     </mat-accordion>
   </div>

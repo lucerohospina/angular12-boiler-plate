@@ -1,5 +1,5 @@
-.container {
-  padding: 0 400px;
+.sections-container {
+  padding: 0 15vw 3rem;
 }
 
 .header {
@@ -18,25 +18,46 @@
 ::ng-deep .mat-expansion-panel-header {
   background-color: #404040;
   border-radius: 0 !important;
+  padding: 24px !important;
+}
+
+::ng-deep .mat-expansion-panel-header:hover {
+  background-color: #404040 !important;
+}
+
+::ng-deep .mat-expansion-panel-header.mat-expanded,
+::ng-deep .mat-expansion-panel-header.mat-expanded:focus,
+::ng-deep .mat-expansion-panel-header.mat-expanded:hover {
+  background-color: #fff !important;
+}
+
+::ng-deep .mat-expansion-panel-header[aria-disabled=true] {
+  color: #DCDCDC;
 }
 
 .mat-expansion-panel-header-title {
   background-color: #C0C0C0;
   color: #fff;
-  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .mat-expansion-panel-header-description {
-  background-color: #404040;
   color: #fff;
+  flex-direction: column;
+  position: relative;
+  top: 8px;
+}
+
+.panel-header-description-font-color {
+  color: #000;
 }
 
 ::ng-deep .mat-expansion-panel-body {
   background-color: #E8E8E8;
 }
 
-.questions-container {
-  background-color: #fff;
-  padding: 20px;
-  margin-top: 1rem;
+.section-index-title {
+  position: relative;
+  top: 8px;
 }

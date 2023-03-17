@@ -11,22 +11,38 @@ import { QuestionsService } from 'src/app/services/questions.service';
 export class SectionsComponent implements OnInit {
   sectionsResult: Sections;
   questionsResult: Questions;
+  isPanelOpened: boolean;
 
-  constructor(private questionsService: QuestionsService) { }
+  constructor(private questionsService: QuestionsService) { 
+    this.isPanelOpened = false;
+  }
 
   ngOnInit(): void {
+    this.getSelection();
+    this.getQuestions();
+  }
+
+  getSelection(): void {
     this.questionsService.getSections().subscribe({
       next: (response) => {
         this.sectionsResult = response.result;
-        console.log('SECTIONS', this.sectionsResult);
       }
     });
+  }
 
+  getQuestions(): void {
     this.questionsService.getQuestions().subscribe({
       next: (response) => {
         this.questionsResult = response.result;
-        console.log('QUESTIONS', this.questionsResult);
       }
     });
+  }
+
+  openedPanel() {
+    this.isPanelOpened = true;
+  }
+
+  closedPanel() {
+    this.isPanelOpened = false;
   }
 }

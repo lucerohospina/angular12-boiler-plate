@@ -6,6 +6,7 @@ export interface Questions {
 }
 
 export interface Question {
+  sectionOccurrenceId: string;
   id: string;
   version: string;
   displayText: string;

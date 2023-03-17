@@ -5,6 +5,7 @@
     "startedByMe": true,
     "questions": [
       {
+        "sectionOccurrenceId": "5b5c83c81b516550869cc802604bcbad",
         "id": "8987a22c1b5c2590869cc802604bcbe0",
         "version": "1.0",
         "displayText": "QUESTION HS",
@@ -76,6 +77,7 @@
         "hasSkippedFlag": false
       },
       {
+        "sectionOccurrenceId": "5b5c83c81b516550869cc802604bcbad",
         "id": "d7f8a2ec1b5c2590869cc802604bcb3b",
         "version": "1.0",
         "displayText": "QUESTION MEDIUM",
@@ -140,6 +142,7 @@
         "hasSkippedFlag": false
       },
       {
+        "sectionOccurrenceId": "5b5c83c81b516550869cc802604bcbad",
         "id": "6baa66601b9c2590869cc802604bcb62",
         "version": "1.0",
         "displayText": "DROPDOWN PARENT",

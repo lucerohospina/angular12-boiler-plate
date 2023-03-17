@@ -15,7 +15,22 @@
               "numberLevel": "1",
               "totalQuestions": "3",
               "answeredQuestions": "0"
-          }
+          },
+          {
+            "sectionOccurrenceId": "6b5c83c81b516550869cc802604bcbad",
+            "status": "not_started",
+            "issueStatus": {
+                "hardStopCount": 0,
+                "issueCount": 0,
+                "remidiatedCount": 0,
+                "skippedCount": 0
+            },
+            "name": "SECTION 2",
+            "description": "",
+            "numberLevel": "1",
+            "totalQuestions": "0",
+            "answeredQuestions": "0"
+        }
       ]
   }
 }
