@@ -2,26 +2,27 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
 
-## Development server
+## Visuals
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![closed](https://user-images.githubusercontent.com/32287019/225915652-40218c0f-0cd6-4306-b9f9-bedd3027fc03.png)
 
-## Code scaffolding
+![opened](https://user-images.githubusercontent.com/32287019/225916024-5e358153-972e-47d9-9311-9d71c3bf854f.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Explaining Upgrade Process from AngularJS to Angular 12
 
-## Build
+## Context
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+We have to take into account that I have not had access to any specifics about the aplication in AngularJS that needs migration. Meaning, I do not know the size of the application or its design.
 
-## Running unit tests
+## Approach
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Just out of my head I would suggest a rewrite of the application. 
+We could take this opportunity to upgrade the visual design if possible, giving the application a modern look and feel considering latest angular versions can work with latest versions of UI libraries. 
 
-## Running end-to-end tests
+With the rewrite we can deliver small pieces of the application every sprint and they will be ready for testing. We should have an enviroment ready so potencial users can look around.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Process Example
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* Propose the application architectural design based on an through analysis of the AngularJS application.
+* Work the application scaffolding based on an through analysis of the AngularJS application.
+* Identify the pieces/sections of the applications so that we can work on them one at a time.
